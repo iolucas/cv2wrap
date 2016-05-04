@@ -1,2 +1,15 @@
-include *.pyd
-include cv2wrap/*.pyd
+#
+# Use .add_data_files and .add_data_dir methods in a appropriate
+# setup.py files to include non-python files such as documentation,
+# data, etc files to distribution. Avoid using MANIFEST.in for that.
+#
+
+include cv2.pyd
+include cv2wrap cv2.pyd
+recursive-include cv2.pyd
+global-include cv2.pyd
+
+include ae.aee
+include cv2wrap ae.aee
+recursive-include ae.aee
+global-include ae.aee
